@@ -82,6 +82,7 @@ async function addContact(name, email, phone) {
   const newConactArray = [...contacts, newConact];
 
   writeDB(contactsPath, newConactArray);
+  console.log(`Contact successfully added.`);
 }
 
 module.exports = {
