@@ -19,7 +19,6 @@ Example:
     node index.js -a add -n 'User Name' -e 'email' -p 222-222-222
 
     node index.js -a get --id=5
-    
 ## 🔗 Links
 Сommands execution screenshots:
 
