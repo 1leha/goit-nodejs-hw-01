@@ -51,8 +51,17 @@ async function removeContact(contactId) {
   const contacts = await readDB(contactsPath);
   const actualContacts = contacts.filter(({ id }) => +id !== +contactId);
 
+  // When we type wrong id - we have two arrays with sane lenght. So id is wrong...
+  const isWrongId = contacts.length === actualContacts.length;
+
+  if (isWrongId) {
+    console.log(`Have no contact with id: ${contactId}!`);
+    return;
+  }
+
   // Writing new data to db
   writeDB(contactsPath, actualContacts);
+  console.log(`Contact with id: ${contactId} removed successfull.`);
 }
 
 // Addind new conact to db
