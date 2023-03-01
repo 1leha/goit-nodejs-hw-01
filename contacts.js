@@ -32,7 +32,7 @@ async function writeDB(dbFile, dbData) {
 // Function consolind data from contacts.json
 async function listContacts() {
   const contacts = await readDB(contactsPath);
-  console.log("contacts :>> ", contacts);
+  console.table(contacts);
 }
 
 // Function gettind data by ID
